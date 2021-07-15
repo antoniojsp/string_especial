@@ -7,22 +7,25 @@ class strm:
         self.temp = self.temp + list(string)
     def capitalize(self):
         self.temp[0] = self.temp[0].upper()
-    def str(self):
-        return "".join(self.temp)
     def len(self):
         return len(self.temp)
 
+    def __str__(self):
+        return "".join(self.temp)
+
+
 
 string = strm("hola")
-print(string.str())
+print(string)
 
 string.replace(1, "A")
-print(string.str())
+print(string)
 
-string.append("Antonio")
-print(string.str())
+string.append(" Antonio")
+print(string)
 
 string.capitalize()
-print(string.str())
+print(string)
 
 print(string.len())
+print(string)
