@@ -1,4 +1,4 @@
-class mutable_string:
+class linea:
     def __init__(self, string):
         self.word = list(string)
     # replace a char according to the index provided
@@ -18,6 +18,10 @@ class mutable_string:
     # returns the len of the word
     def len(self):
         return len(self.word)
+    def upper(self):
+        for i, j in enumerate(self.word):
+            self.word[i] = j.upper()
+        
     def _create_dict(self):
         temp = {}
         for i in self.word:
@@ -53,6 +57,14 @@ class mutable_string:
             return temp
         else:
             raise StopIteration
+    def __add__(self, other):
+        return linea( "".join(self.word)+ str(other))
 
-string = mutable_string("antonio")
-print(str(string))
+palabra = linea("antonio")
+palabra2 = linea("silva")
+palabra3 = linea("paucar")
+resultado = palabra + palabra2 + palabra3
+print(resultado)
+
+resultado.capitalize()
+print(resultado)
